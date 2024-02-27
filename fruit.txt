@@ -1,0 +1,39 @@
+db.fruit.insert(
+    [
+    {
+        name: "Carrot",
+        category: "vegetables",
+        manufacturing_country: "Turkey",
+        price: 7.00,
+        color: "orange"
+    },
+     {
+        name: "pineapple",
+        category: "plantain",
+        manufacturing_country: "brazil",
+        price: 29.99,
+        color: "yellow"
+    },
+     {
+        name: "tomato",
+        category: "vegetables",
+        manufacturing_country: "Turkey",
+        price: 3.95,
+        color: "red"
+    },
+     {
+        name: "cucumber",
+        category: "vegetables",
+        manufacturing_country: "Turkey",
+        price: 3.99,
+        color: "green"
+    },
+     {
+        name: "clementine",
+        category: "Citrus",
+        manufacturing_country: "China",
+        price: 7.99,
+        color: "orange"
+    }
+
+])

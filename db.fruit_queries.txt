@@ -1,0 +1,265 @@
+db.fruit.insert(
+    [
+        {
+            name: "Carrot",
+            category: "vegetables",
+            manufacturing_country: "Turkey",
+            price: 7.00,
+            color: "orange"
+        },
+        {
+            name: "pineapple",
+            category: "plantain",
+            manufacturing_country: "brazil",
+            price: 29.99,
+            color: "yellow"
+        },
+        {
+            name: "tomato",
+            category: "vegetables",
+            manufacturing_country: "Turkey",
+            price: 3.95,
+            color: "red"
+        },
+        {
+            name: "cucumber",
+            category: "vegetables",
+            manufacturing_country: "Turkey",
+            price: 3.99,
+            color: "green"
+        },
+        {
+            name: "clementine",
+            category: "Citrus",
+            manufacturing_country: "China",
+            price: 7.99,
+            color: "orange"
+        }
+    ])
+
+
+
+db.fruit.find().count()
+
+
+db.fruit.find().limit(1)
+
+
+db.fruit.find().skip(db.fruit.find().count() - 1)
+
+
+db.fruit.find().limit(2)
+
+
+db.fruit.find().skip(db.fruit.find().count() - 2)
+
+
+db.fruit.find({ name: "Carrot" })
+
+
+db.fruit.find({ price: 3.95 })
+
+
+db.fruit.find().sort({ price: -1 }).limit(1)
+
+
+db.fruit.find().sort({ price: 1 }).limit(1)
+
+db.fruit.remove({ price: 3.95 })
+
+db.fruit.update(
+    { color: "yellow" },
+    {
+        $set: {
+            name: "banana",
+            category: "tropical plant",
+            manufacturing_country: "Turkey",
+            price: 7,
+            color: "orange"
+        }
+    }
+)
+
+db.fruit.update(
+    { color: "green" },
+    {
+        $set: {
+            name: "watermelon",
+            category: "pumpkins",
+            manufacturing_country: "cyprus",
+            price: 3.90,
+            color: "red"
+        }
+    }
+)
+
+
+
+db.fruit.insert(
+
+    {
+        name: "guava",
+        category: "plantain",
+        manufacturing_country: "Morocco",
+        price: 5.00,
+        color: "yellow",
+
+        purchase:
+        {
+            day: 8,
+            month: 3,
+            year: 2021
+        }
+    })
+
+
+
+db.fruit.insert(
+
+    {
+        name: "Carrot",
+        category: "vegetables",
+        country: "Italy",
+        price: 4.00,
+        color: "orange",
+        purchase:
+        {
+            day: 31,
+            month: 5,
+            year: 2023
+        }
+
+
+    })
+
+
+
+db.fruit.remove({ "purchase.day": 31 })
+
+
+db.fruit.update({ name: "cucumber" },
+    {
+        $push:
+        {
+            purchase:
+            {
+                day: 10,
+                month: 8,
+                year: 2022
+            }
+        }
+    })
+
+
+db.fruit.update({ name: "pineapple" },
+    {
+        $push:
+        {
+            purchase:
+            {
+                day: 9,
+                month: 3,
+                year: 2022
+            }
+        }
+    })
+
+
+db.fruit.update({ name: "Carrot" },
+    {
+        $push:
+        {
+            purchase:
+            {
+                day: 5,
+                month: 1,
+                year: 2022
+            }
+        }
+    })
+
+    
+
+
+db.fruit.update({ name: "banana" },
+    {
+        $push:
+        {
+            purchase:
+            {
+                day: 3,
+                month: 6,
+                year: 2021
+            }
+        }
+    })
+
+
+
+db.fruit.update({ name: "tomato" },
+    {
+        $push:
+        {
+            purchase:
+            {
+                day: 7,
+                month: 8,
+                year: 2023
+            }
+        }
+    })
+
+
+db.fruit.update(
+    { name: "tomato" },
+    {
+        $push: {
+            purchase: [
+            {   
+                day: 4,
+                month: 7,
+                year: 2021
+            }
+            ]
+        }
+    }
+)
+
+db.fruit.update(
+    { name: "banana" },
+    {
+        $set: {
+            purchase: [
+                { day: 4, month: 7, year: 2022 },
+                { day: 5, month: 11, year: 2022 }
+            ]
+        }
+    }
+);
+
+
+db.fruit.update(
+    {name: "banana"},
+    {
+        $pull:{
+            purchase:
+                {
+                    day: 5,
+                    month: 11,
+                }
+        }
+    }
+)
+
+db.fruit.update(
+    {name: "Carrot"},
+    {
+        $pull:{
+            purchase:  
+                {
+                    month: 1,
+                    year: 2022
+                }       
+        }
+    }
+)

@@ -1,0 +1,48 @@
+<!DOCTYPE fruit_shop [
+    <!ELEMENT fruit_shop (fruit+)>
+    <!ELEMENT fruit (name,category,manufacturing_country,price,color)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT category (#PCDATA)>
+    <!ELEMENT manufacturing_country (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT color (#PCDATA)>
+]>
+
+
+<fruit_shop>
+    <fruit>
+        <name>Carrot</name>
+        <category>vegetables</category>
+        <manufacturing_country>Turkey</manufacturing_country>
+        <price>7.00</price>
+        <color>orange</color>
+    </fruit>
+    <fruit>
+        <name>pineapple</name>
+        <category>plantain</category>
+        <manufacturing_country>brazil</manufacturing_country>
+        <price>29.99</price>
+        <color>yellow</color>
+    </fruit>
+    <fruit>
+        <name>tomato</name>
+        <category>vegetables</category>
+        <manufacturing_country>Turkey</manufacturing_country>
+        <price>3.95</price>
+        <color>red</color>
+    </fruit>
+    <fruit>
+        <name>cucumber</name>
+        <category>vegetables</category>
+        <manufacturing_country>Turkey</manufacturing_country>
+        <price>3.95</price>
+        <color>green</color>
+    </fruit>
+    <fruit>
+        <name>clementine</name>
+        <category>Citrus</category>
+        <manufacturing_country>China</manufacturing_country>
+        <price>7.99</price>
+        <color>orange</color>
+    </fruit>
+</fruit_shop>
